@@ -6,6 +6,7 @@ const mongoose=require('mongoose')
 
 //routes
 const userRoutes=require('./routes/auth')
+const adminRoutes=require('./routes/admin/auth')
 
 env.config();
 
@@ -26,6 +27,8 @@ mongoose.connect(
 
 app.use(bodyParser());
 app.use('/api',userRoutes); 
+app.use('/api',adminRoutes);
+
 
 /*
 app.get('/',(req,res,next)=>{
