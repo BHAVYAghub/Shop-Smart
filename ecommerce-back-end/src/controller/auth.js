@@ -53,11 +53,11 @@ exports.signin=(req,res)=>{
 
             if(user.authenticate(req.body.password)){
                 const token=jwt.sign({_id:user._id},process.env.JWT_SECRET,{expiresIn:'1h'});
-                const{firstName,lastName,email,role,fullName}=user;
+                const{_id,firstName,lastName,email,role,fullName}=user;
                 res.status(200).json({
                     token,
                     user:{
-                        firstName,lastName,email,role,fullName
+                        _id,firstName,lastName,email,role,fullName
                     }
                 });
 
@@ -70,12 +70,24 @@ exports.signin=(req,res)=>{
 
         }
         else{
-            return res.status(400).json({message:"Something went wrong"})
+            return res.status(400).json({message:"1Something went wrong"})
         }
 
 
 
     });
+
+
+}
+exports.requireSignin =(req,res,next)=>{
+
+    const token=req.headers.authorization.split(" ")[1];
+    const user=jwt.verify (token,process.env.JWT_SECRET);
+    req.user=user;
+    //console.log(token);
+   next(); 
+    //jwt.decode();
+
 
 
 }
