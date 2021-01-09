@@ -4,6 +4,8 @@ const app=express();
 const bodyParser=require('body-parser'); 
 const mongoose=require('mongoose')
 
+//routes
+const userRoutes=require('./routes/user')
 
 env.config();
 
@@ -20,9 +22,10 @@ mongoose.connect(
     console.log('Database Connected !!');
 });
 
-app.use(express.json());
+app.use(bodyParser());
+app.use('/api',userRoutes); 
 
-
+/*
 app.get('/',(req,res,next)=>{
 
 
@@ -49,6 +52,8 @@ app.post('/data',(req,res,next)=>{
 
 
 });
+
+*/
 app.listen(process.env.PORT,()=>{
      
 
