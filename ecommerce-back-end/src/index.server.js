@@ -5,7 +5,7 @@ const bodyParser=require('body-parser');
 const mongoose=require('mongoose')
 
 //routes
-const userRoutes=require('./routes/user')
+const userRoutes=require('./routes/auth')
 
 env.config();
 
