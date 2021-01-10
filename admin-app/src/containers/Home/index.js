@@ -12,7 +12,11 @@ const Home = (props) => {
     <Layout>
 
         
-        <Jumbotron></Jumbotron>
+        <Jumbotron style={{margin: '5rem',background:'#fff'}} className="text-center">
+            <h1>
+                Welcome to Admin DashBoard
+            </h1>
+        </Jumbotron>
 
     </Layout>
    )
