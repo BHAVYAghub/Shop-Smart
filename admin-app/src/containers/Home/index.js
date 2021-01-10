@@ -19,7 +19,7 @@ const Home = (props) => {
         </Jumbotron>
 
     </Layout>
-   )
+   ) 
 
  }
 
