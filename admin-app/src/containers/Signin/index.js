@@ -20,7 +20,7 @@ const Signin = (props) => {
                                         placeholder="Email"
                                         value=""
                                         type="email"
-                                        onChange={()=>{}}
+                                         onChange={()=>{}}
                                     />
 
                         <Input
