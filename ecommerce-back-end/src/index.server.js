@@ -1,7 +1,7 @@
 const express =require('express')
 const env=require('dotenv')
 const app=express();
-const bodyParser=require('body-parser'); 
+
 const mongoose=require('mongoose')
 
 //routes
@@ -25,7 +25,7 @@ mongoose.connect(
     console.log('Database Connected !!');
 });
 
-app.use(bodyParser());
+app.use(express.json());
 app.use('/api',userRoutes); 
 app.use('/api',adminRoutes);
 
