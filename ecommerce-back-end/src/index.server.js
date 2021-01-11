@@ -1,7 +1,7 @@
 const express =require('express')
 const env=require('dotenv')
 const app=express();
-
+const path=require('path');
 const mongoose=require('mongoose')
 
 //routes
@@ -10,6 +10,7 @@ const adminRoutes=require('./routes/admin/auth')
 const categoryRoutes=require('./routes/category');
 const productRoutes=require('./routes/product');
 const cartRoutes=require('./routes/cart');
+
 env.config();
 
 //mondodb connection
@@ -28,6 +29,7 @@ mongoose.connect(
 });
 
 app.use(express.json());
+app.use('/public',express.static(path.join(__dirname,'uploads')));
 app.use('/api',userRoutes); 
 app.use('/api',adminRoutes);
 app.use('/api',categoryRoutes);

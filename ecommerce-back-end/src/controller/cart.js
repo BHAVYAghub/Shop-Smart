@@ -11,28 +11,18 @@ exports.addItemToCart = (req, res) => {
         
         //if cart already exist then update cart.
         const item=cart.cartItems.find(c=>c.product==product);
+        let condition,action;
         if(item){
-          Cart.findOneAndUpdate({user:req.user._id,"cartItems.product":product},{
+          condition={user:req.user._id,"cartItems.product":product};
+          action={
             "$set":{
-                "cartItems":{
+                "cartItems.$":{ 
                   ...req.body.cartItems,
                   quantity:item.quantity+req.body.cartItems.quantity
                 }
             }
-  
-          })
-          .exec((error,_cart)=>{
-            if (error) return res.status(400).json({ error });
-            if(_cart){
-              return res.status(201).json({ cart:_cart });
-  
-  
-            }
-  
-  
-  
-  
-          });
+          }
+         
 
 
 
@@ -42,28 +32,31 @@ exports.addItemToCart = (req, res) => {
 
         }
         else{
-
-
-          Cart.findOneAndUpdate({user:req.user._id},{
+          condition={user:req.user._id};
+          action={
             "$push":{
                 "cartItems":req.body.cartItems
             }
   
-          })
-          .exec((error,_cart)=>{
-            if (error) return res.status(400).json({ error });
-            if(_cart){
-              return res.status(201).json({ cart:_cart });
-  
-  
-            }
-  
-  
-  
-  
-          });
+          }
+
+
+          
           
         }
+        Cart.findOneAndUpdate(condition,action)
+        .exec((error,_cart)=>{
+          if (error) return res.status(400).json({ error });
+          if(_cart){
+            return res.status(201).json({ cart:_cart });
+
+
+          }
+
+
+
+
+        });
 
 
         
