@@ -20,10 +20,10 @@ const Home = (props) => {
               <li><NavLink to={'/'}>Home
 
               </NavLink></li>
-              <li><NavLink to={'/'}>Products
+              <li><NavLink to={'/products'}>Products
 
               </NavLink></li>
-              <li><NavLink to={'/'}>Orders
+              <li><NavLink to={'/orders'}>Orders
 
               </NavLink></li>
               
