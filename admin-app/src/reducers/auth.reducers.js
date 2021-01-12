@@ -36,9 +36,29 @@ export default (state=initState,action)=>{
                 ...state,
                 user:action.payload.user,
                 token:action.payload.token,
-                authenticate:true
+                authenticate:true,
+                authenticating:false
             }
             break;
+            case authConstants.LOGOUT_REQUEST:
+                state = {
+                    ...initState,
+                    loading: true
+                }
+                break;
+            case authConstants.LOGOUT_SUCCESS:
+                state = {
+                    ...initState
+                }
+                break;
+            case authConstants.LOGOUT_FAILURE:
+                state = {
+                    ...state,
+                    error: action.payload.error,
+                    loading: false
+                }
+                break;
+            
 
 
     }
