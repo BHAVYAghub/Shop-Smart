@@ -6,8 +6,12 @@ export const login=(user)=>{
     console.log(user);
 
     return async(dispatch)=>{
+        //cors:cross origin resource share policy
+         const res=await axios.post('/admin/signin',{
+                ...user
 
-        const res=await axios.post('/admin/signin')
+
+         });
         dispatch({
             type:authConstants.LOGIN_REQUEST,
             payload:{

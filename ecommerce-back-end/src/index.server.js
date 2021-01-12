@@ -2,7 +2,9 @@ const express =require('express')
 const env=require('dotenv')
 const app=express();
 const path=require('path');
-const mongoose=require('mongoose')
+const mongoose=require('mongoose');
+const cors=require('cors');
+
 
 //routes
 const userRoutes=require('./routes/auth')
@@ -27,7 +29,7 @@ mongoose.connect(
 
     console.log('Database Connected !!');
 });
-
+app.use(cors());
 app.use(express.json());
 app.use('/public',express.static(path.join(__dirname,'uploads')));
 app.use('/api',userRoutes); 
