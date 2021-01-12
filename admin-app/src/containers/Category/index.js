@@ -4,9 +4,9 @@ import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     getAllCategory,
-    //     addCategory,
-    //     updateCategories,
-    //     deleteCategories as deleteCategoriesAction
+         addCategory,
+         updateCategories,
+         deleteCategories as deleteCategoriesAction
 } from '../../actions';
 import Input from '../../components/UI/Input';
 // import Modal from '../../components/UI/Modal';
@@ -44,7 +44,25 @@ const Category = (props) => {
         dispatch(getAllCategory());
 
     }, []);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+
+                const form = new FormData();
+    
+                if (categoryName === "") {
+                    alert('Category name is required');
+                    setShow(false);
+                    return;
+                }
+    
+                form.append('name', categoryName);
+                form.append('parentId', parentCategoryId);
+                form.append('categoryImage', categoryImage);
+                 dispatch(addCategory(form));
+                 setCategoryName('');
+                 setParentCategoryId('');
+                 setShow(false);
+            }
+    
     const handleShow = () => setShow(true);
 
 
@@ -171,24 +189,7 @@ const Category = (props) => {
     //     }, [category.loading]);
 
 
-    //     const handleClose = () => {
-
-    //         const form = new FormData();
-
-    //         if (categoryName === "") {
-    //             alert('Category name is required');
-    //             setShow(false);
-    //             return;
-    //         }
-
-    //         form.append('name', categoryName);
-    //         form.append('parentId', parentCategoryId);
-    //         form.append('categoryImage', categoryImage);
-    //         dispatch(addCategory(form));
-    //         setCategoryName('');
-    //         setParentCategoryId('');
-    //         setShow(false);
-    //     }
+    //     
     //     const handleShow = () => setShow(true);
 
 
