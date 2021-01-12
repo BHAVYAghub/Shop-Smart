@@ -51,7 +51,7 @@ const Signup = (props) => {
 
     }
     if (user.loading) {
-        return <p>Loading...!</p>;
+        return <p>Loading...!</ p>;
       }
 
     return (

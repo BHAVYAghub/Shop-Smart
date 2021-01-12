@@ -2,6 +2,9 @@ import React from 'react';
 import { Col, Container, Jumbotron,Row } from 'react-bootstrap';
 import Layout from '../../components/Layout';
 import './style.css';
+import { NavLink } from 'react-router-dom';
+
+
 /**
 * @author
 * @function Home
@@ -13,7 +16,18 @@ const Home = (props) => {
       <Container fluid>
       <Row>
           <Col md={2} className="sidebar">
-            Sidebar
+            <ul>
+              <li><NavLink to={'/'}>Home
+
+              </NavLink></li>
+              <li><NavLink to={'/'}>Products
+
+              </NavLink></li>
+              <li><NavLink to={'/'}>Orders
+
+              </NavLink></li>
+              
+            </ul>
 
           
 

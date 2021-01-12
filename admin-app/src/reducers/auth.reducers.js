@@ -12,7 +12,10 @@ const initState={
 
     },
     authenticate:false,
-    authenticating:false
+    authenticating:false,
+    loading: false,
+    error: null,
+    message: ''
 
 
 
@@ -42,7 +45,7 @@ export default (state=initState,action)=>{
             break;
             case authConstants.LOGOUT_REQUEST:
                 state = {
-                    ...initState,
+                    ...state,
                     loading: true
                 }
                 break;

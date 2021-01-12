@@ -34,7 +34,9 @@ function App() {
         <PrivateRoute path="/" exact component={Home} />
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
-
+        <PrivateRoute path="/category" component={()=><p>category</p>} />
+        <PrivateRoute path="/products" component={()=><p>category</p>} />
+        <PrivateRoute path="/orders" component={()=><p>category</p>} />
 
 
 
