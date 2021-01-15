@@ -61,7 +61,7 @@ const Header = (props) => {
       <Container fluid>
         {/* <Navbar.Brand href="#home">Admin Dashboardp</Navbar.Brand> */}
         <Link to="/" className="navbar-brand">
-          Admin DashBoard
+          Customer Dashboard
         </Link>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
