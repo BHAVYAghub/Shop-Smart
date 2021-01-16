@@ -102,31 +102,33 @@ exports.fetchUser = (req, res) => {
 };
 
 exports.resetPassword = (req, res) => {
-  User.findOne({ email: req.body.email }).exec((error, user) => {
-    if (error) return res.status(400).json({ error });
-    // console.log(user);
-    if (user) {
-      if (user.role === "user") {
-        user.password = req.body.password;
-        user.save().then((updatedUser) => {
-          res
-            .status(200)
-            .json({
-              message: "Password Updated Successfully",
+  User.findOne({ _id: mongoose.Types.ObjectId(req.user._id) }).exec(
+    (error, user) => {
+      if (error) return res.status(400).json({ error });
+      // console.log(user);
+      if (user) {
+        if (user.role === "user") {
+          user.password = req.body.password;
+          user
+            .save()
+            .then((updatedUser) => {
+              res.status(200).json({
+                message: "Password Updated Successfully",
+              });
             })
             .catch((err) => {
               res.status(400).json({ message: "Something went wrong" });
             });
-        });
+        } else {
+          return res.status(400).json({
+            message: "Something Went Wrong",
+          });
+        }
       } else {
-        return res.status(400).json({
-          message: "Something Went Wrong",
-        });
+        return res.status(400).json({ message: "Something went wrong" });
       }
-    } else {
-      return res.status(400).json({ message: "Something went wrong" });
     }
-  });
+  );
 };
 
 exports.deleteUser = (req, res) => {

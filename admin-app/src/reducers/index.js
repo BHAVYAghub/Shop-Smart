@@ -7,6 +7,7 @@ import orderReducer from "./order.reducer";
 import customerLoginReducer from "./customerLogin.reducer";
 import customerSignupReducer from "./customerRegister.reducer";
 import customerFetchReducer from "./customerFetch.reducer";
+import customerResetReducer from "./customerReset.reducer";
 const rootReducer = combineReducers({
   auth: authReducer,
   user: userReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   customerLogin: customerLoginReducer,
   customerSignup: customerSignupReducer,
   customerFetch: customerFetchReducer,
+  customerResetPassword: customerResetReducer,
   order: orderReducer,
 });
 

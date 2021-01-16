@@ -24,7 +24,7 @@ router.post("/signup", validateSignupRequest, isRequestValidated, signup);
 
 router.post("/signout", signout);
 
-router.post("/resetPassword", resetPassword);
+router.post("/resetPassword", requireSignin, resetPassword);
 
 router.get("/fetch", requireSignin, fetchUser);
 

@@ -7,6 +7,7 @@ import Signin from "./containers/Signin";
 import Signup from "./containers/Signup";
 import CustomerSignup from "./containers/Customer/Signup/index";
 import customerLogin from "./containers/Customer/Signin/index";
+import CustomerResetPassword from "./containers/Customer/ResetPassword";
 import Profile from "./containers/Customer/Profile";
 import PrivateRoute from "./components/HOC/PrivateRoute";
 import { useDispatch, useSelector } from "react-redux";
@@ -36,6 +37,10 @@ function App() {
         <Route path="/customer/signup" component={CustomerSignup} />
         <Route path="/customer/signin" component={customerLogin} />
         <PrivateRoute path="/customer/profile" component={Profile} />
+        <PrivateRoute
+          path="/customer/resetPassword"
+          component={CustomerResetPassword}
+        />
         <PrivateRoute path="/category" component={Category} />
         <PrivateRoute path="/products" component={Products} />
         <PrivateRoute path="/orders" component={Orders} />
