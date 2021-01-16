@@ -6,6 +6,7 @@ import categoryReducer from "./category.reducer";
 import orderReducer from "./order.reducer";
 import customerLoginReducer from "./customerLogin.reducer";
 import customerSignupReducer from "./customerRegister.reducer";
+import customerFetchReducer from "./customerFetch.reducer";
 const rootReducer = combineReducers({
   auth: authReducer,
   user: userReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   product: productReducer,
   customerLogin: customerLoginReducer,
   customerSignup: customerSignupReducer,
+  customerFetch: customerFetchReducer,
   order: orderReducer,
 });
 

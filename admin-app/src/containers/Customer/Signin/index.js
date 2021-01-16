@@ -16,7 +16,7 @@ const Signin = (props) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const auth = useSelector((state) => state.auth);
+  const auth = useSelector((state) => state.customerLogin);
   const dispatch = useDispatch();
 
   const userLogin = (e) => {
@@ -35,7 +35,7 @@ const Signin = (props) => {
   return (
     <Layout>
       <Container>
-        <Row style={{ marginTop: "50px" }}>
+        <Row style={{ marginTop: "200px" }}>
           <Col md={{ span: 6, offset: 3 }}>
             <Form onSubmit={userLogin}>
               <Input

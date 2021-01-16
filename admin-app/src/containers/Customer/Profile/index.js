@@ -4,21 +4,27 @@ import Layout from "../../../components/Layout";
 import Input from "../../../components/UI/Input";
 import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { customerSignup, auth } from "../../../actions";
+import { customerFetch } from "../../../actions";
 import { useEffect } from "react";
 /**
  * @author
  * @function Signup
  **/
 
-const Signup = (props) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
+const Profile = (props) => {
+  //   const [firstName, setFirstName] = useState("");
+  //   const [lastName, setLastName] = useState("");
+  //   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const auth = useSelector((state) => state.auth);
-  const user = useSelector((state) => state.user);
+  //   const [error, setError] = useState("");
+  //   const auth = useSelector((state) => state.auth);
+
+  const firstName = useSelector((state) => {
+    return state.customerFetch.profile.firstName;
+  });
+  const loading = useSelector((state) => state.customerFetch.profile.loading);
+  const lastName = useSelector((state) => state.customerFetch.profile.lastName);
+  const email = useSelector((state) => state.customerFetch.profile.email);
   const dispatch = useDispatch();
 
   //   useEffect(() => {
@@ -39,41 +45,40 @@ const Signup = (props) => {
       email,
       password,
     };
-
-    dispatch(customerSignup(user));
   };
 
-  if (auth.authenticate) {
-    return <Redirect to={`/`} />;
-  }
-  if (user.loading) {
+  //   if (auth.authenticate) {
+  //     return <Redirect to={`/`} />;
+  //   }
+  if (loading) {
     return <p>Loading...!</p>;
   }
+
+  dispatch(customerFetch());
 
   return (
     <Layout>
       <Container>
-        {user.message}
         <Row style={{ marginTop: "200px" }}>
           <Col md={{ span: 6, offset: 3 }}>
-            <Form onSubmit={userSignup}>
+            <Form>
               <Row>
                 <Col md={6}>
                   <Input
                     label="First Name"
-                    placeholder="Enter First Name"
+                    placeholder="First Name"
                     value={firstName}
                     type="text"
-                    onChange={(e) => setFirstName(e.target.value)}
+                    readOnly
                   />
                 </Col>
                 <Col md={6}>
                   <Input
                     label="Last Name"
-                    placeholder="Enter Last Name"
+                    placeholder=" Last Name"
                     value={lastName}
                     type="text"
-                    onChange={(e) => setLastName(e.target.value)}
+                    readOnly
                   />
                 </Col>
               </Row>
@@ -82,20 +87,8 @@ const Signup = (props) => {
                 placeholder="Email"
                 value={email}
                 type="email"
-                onChange={(e) => setEmail(e.target.value)}
+                readOnly
               />
-
-              <Input
-                label="Password"
-                placeholder="Enter Password"
-                value={password}
-                type="password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-
-              <Button variant="primary" type="submit">
-                Register
-              </Button>
             </Form>
           </Col>
         </Row>
@@ -104,4 +97,4 @@ const Signup = (props) => {
   );
 };
 
-export default Signup;
+export default Profile;

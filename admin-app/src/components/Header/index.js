@@ -3,6 +3,7 @@ import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signout } from "../../actions";
+import { customerSignout } from "../../actions";
 
 /**
  * @author
@@ -11,10 +12,15 @@ import { signout } from "../../actions";
 
 const Header = (props) => {
   const auth = useSelector((state) => state.auth);
+  const customerAuth = useSelector((state) => state.customerLogin);
   const dispatch = useDispatch();
 
   const logout = () => {
-    dispatch(signout());
+    if (auth.authenticate) {
+      dispatch(signout());
+    } else {
+      dispatch(customerSignout());
+    }
   };
   const renderLoggedInLinks = () => {
     return (
@@ -78,7 +84,9 @@ const Header = (props) => {
                         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                     </NavDropdown>*/}
           </Nav>
-          {auth.authenticate ? renderLoggedInLinks() : renderNonLoggedInLinks()}
+          {auth.authenticate || customerAuth.authenticate
+            ? renderLoggedInLinks()
+            : renderNonLoggedInLinks()}
         </Navbar.Collapse>
       </Container>
     </Navbar>

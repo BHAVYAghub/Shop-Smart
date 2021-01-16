@@ -7,6 +7,7 @@ import Signin from "./containers/Signin";
 import Signup from "./containers/Signup";
 import CustomerSignup from "./containers/Customer/Signup/index";
 import customerLogin from "./containers/Customer/Signin/index";
+import Profile from "./containers/Customer/Profile";
 import PrivateRoute from "./components/HOC/PrivateRoute";
 import { useDispatch, useSelector } from "react-redux";
 import { isUserLoggedIn, getInitialData, getAllCategory } from "./actions";
@@ -34,6 +35,7 @@ function App() {
         <Route path="/signup" component={Signup} />
         <Route path="/customer/signup" component={CustomerSignup} />
         <Route path="/customer/signin" component={customerLogin} />
+        <PrivateRoute path="/customer/profile" component={Profile} />
         <PrivateRoute path="/category" component={Category} />
         <PrivateRoute path="/products" component={Products} />
         <PrivateRoute path="/orders" component={Orders} />
