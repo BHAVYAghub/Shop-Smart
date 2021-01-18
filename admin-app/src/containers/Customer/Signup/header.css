@@ -1,0 +1,88 @@
+.signup_section1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #101113;
+}
+
+.signup_section1 .signup_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+}
+
+.signup_section1 .signup_header .signup_logo {
+  margin-left: 30px;
+}
+
+.signup_section1 .signup_header .signup_name {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 30px;
+}
+
+.signup_section1 .signup_header .signup_name a {
+  text-decoration: none;
+}
+
+.signup_section1 .signup_header .signup_name a h1 {
+  color: whitesmoke;
+  letter-spacing: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.signup_section1 .signup_header2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px;
+  padding: 10px;
+  margin-right: 60px;
+  border: 1px white solid;
+}
+
+.signup_section1 .signup_header2 .signup_join a {
+  text-decoration: none;
+  color: white;
+}
+
+.signup_section1 .signup_extra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 50px;
+}
+
+.signup_section1 .signup_extra .signup_login,
+.signup_section1 .signup_extra .signup_about {
+  margin-right: 20px;
+}
+
+.signup_section1 .signup_extra .signup_login h3,
+.signup_section1 .signup_extra .signup_about h3 {
+  color: white;
+  letter-spacing: 1px;
+}
+
+.signup_section1 .signup_extra .signup_login h3 a,
+.signup_section1 .signup_extra .signup_about h3 a {
+  color: white;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+/*# sourceMappingURL=header.css.map */

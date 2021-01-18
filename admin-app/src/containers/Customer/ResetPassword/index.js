@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 
 const ResetPassword = (props) => {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
@@ -42,6 +43,13 @@ const ResetPassword = (props) => {
         <Row style={{ marginTop: "200px" }}>
           <Col md={{ span: 6, offset: 3 }}>
             <Form onSubmit={resetPassword}>
+              <Input
+                label="email"
+                placeholder="Email"
+                value={email}
+                type="password"
+                onChange={(e) => setEmail(e.target.value)}
+              />
               <Input
                 label="Password"
                 placeholder="Password"

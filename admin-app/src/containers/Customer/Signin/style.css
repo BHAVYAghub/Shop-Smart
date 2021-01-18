@@ -1,0 +1,176 @@
+.login_section1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #101113;
+}
+
+.login_section1 .login_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+}
+
+.login_section1 .login_header .login_logo {
+  margin-left: 30px;
+}
+
+.login_section1 .login_header .login_name {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 30px;
+}
+
+.login_section1 .login_header .login_name a {
+  text-decoration: none;
+}
+
+.login_section1 .login_header .login_name a h1 {
+  color: whitesmoke;
+  letter-spacing: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login_section1 .login_header2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px;
+  padding: 10px;
+  margin-right: 60px;
+  border: 1px white solid;
+}
+
+.login_section1 .login_header2 .login_join a {
+  text-decoration: none;
+  color: white;
+}
+
+.login_section1 .login_extra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 50px;
+}
+
+.login_section1 .login_extra .login,
+.login_section1 .login_extra .about {
+  margin-right: 20px;
+}
+
+.login_section1 .login_extra .login h3,
+.login_section1 .login_extra .about h3 {
+  color: white;
+  letter-spacing: 1px;
+}
+
+.login_section1 .login_extra .login h3 a,
+.login_section1 .login_extra .about h3 a {
+  color: white;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.login_section2 {
+  position: relative;
+  background-size: cover;
+  height: 80vh;
+  width: 100%;
+  background-image: url("../../../assets/img/back.jpg");
+  background-repeat: no-repeat;
+}
+
+.login_section2 .login_overlay {
+  background-size: cover;
+  height: 80vh;
+  width: 100%;
+  opacity: 0.8;
+  background: #212121;
+}
+
+.login_section2 .login_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 50px;
+}
+
+.login_section2 .login_inner .login_form {
+  border-radius: 15px;
+  opacity: 0.9;
+  background: black;
+  height: 400px;
+  width: 400px;
+  border: white 1px solid;
+}
+
+.login_section2 .login_inner .login_form .login_head {
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 30px;
+  font-size: larger;
+  letter-spacing: 1px;
+}
+
+.login_section2 .login_inner .login_form .login_head p {
+  font-size: medium;
+  margin-top: 8px;
+}
+
+.login_section2 .login_inner .login_form .err p {
+  color: red;
+  text-align: center;
+}
+
+.login_section2 .login_inner .login_form .login_email {
+  padding: 20px;
+}
+
+.login_section2 .login_inner .login_form .login_email input {
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.login_section2 .login_inner .login_form .login_but {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.login_section2 .login_inner .login_form .login_but input {
+  padding: 19px 50px;
+  letter-spacing: 1.5px;
+  background-color: white;
+  font-size: medium;
+  color: black;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=style.css.map */

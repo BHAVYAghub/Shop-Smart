@@ -1,0 +1,88 @@
+.section1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #101113;
+}
+
+.section1 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+}
+
+.section1 .header .logo {
+  margin-left: 30px;
+}
+
+.section1 .header .name {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 30px;
+}
+
+.section1 .header .name a {
+  text-decoration: none;
+}
+
+.section1 .header .name a h1 {
+  color: whitesmoke;
+  letter-spacing: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.section1 .header2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px;
+  padding: 10px;
+  margin-right: 60px;
+  border: 1px white solid;
+}
+
+.section1 .header2 .join a {
+  text-decoration: none;
+  color: white;
+}
+
+.section1 .extra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 50px;
+}
+
+.section1 .extra .login,
+.section1 .extra .about {
+  margin-right: 20px;
+}
+
+.section1 .extra .login h3,
+.section1 .extra .about h3 {
+  color: white;
+  letter-spacing: 1px;
+}
+
+.section1 .extra .login h3 a,
+.section1 .extra .about h3 a {
+  color: white;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+/*# sourceMappingURL=header.css.map */

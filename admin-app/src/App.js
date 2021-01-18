@@ -31,19 +31,21 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <PrivateRoute path="/" exact component={Home} />
+        {/* <PrivateRoute path="/" exact component={Home} /> */}
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
         <Route path="/customer/signup" component={CustomerSignup} />
         <Route path="/customer/signin" component={customerLogin} />
         <PrivateRoute path="/customer/profile" component={Profile} />
-        <PrivateRoute
-          path="/customer/resetPassword"
-          component={CustomerResetPassword}
-        />
+
         <PrivateRoute path="/category" component={Category} />
         <PrivateRoute path="/products" component={Products} />
         <PrivateRoute path="/orders" component={Orders} />
+        <Route
+          path="/customer/resetPassword"
+          component={CustomerResetPassword}
+        />
+        <Route path="/" exact component={Home} />
       </Switch>
     </div>
   );

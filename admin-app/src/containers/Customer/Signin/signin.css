@@ -1,0 +1,81 @@
+.section2 {
+  position: relative;
+  background-size: cover;
+  height: 700px;
+  width: 100%;
+  background-image: url("../../../assets/img/back.jpg");
+  background-repeat: no-repeat;
+}
+
+.section2 .overlay {
+  background-size: cover;
+  height: 700px;
+  width: 100%;
+  opacity: 0.8;
+  background: #212121;
+}
+
+.section2 .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 150px;
+}
+
+.section2 .inner .form {
+  border-radius: 15px;
+  opacity: 0.9;
+  background: black;
+  height: 400px;
+  width: 400px;
+  border: white 1px solid;
+}
+
+.section2 .inner .form .head {
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 30px;
+  font-size: larger;
+  letter-spacing: 1px;
+}
+
+.section2 .inner .form .head p {
+  font-size: medium;
+  margin-top: 8px;
+}
+
+.section2 .inner .form .err p {
+  color: red;
+  text-align: center;
+}
+
+.section2 .inner .form .name {
+  padding: 20px;
+}
+
+.section2 .inner .form .name input {
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.section2 .inner .form .but {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.section2 .inner .form .but input {
+  padding: 19px 50px;
+  letter-spacing: 1.5px;
+  background-color: white;
+  font-size: medium;
+  color: black;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*# sourceMappingURL=signin.css.map */
