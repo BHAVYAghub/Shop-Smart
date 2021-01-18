@@ -32,7 +32,7 @@ const Signin = (props) => {
   };
 
   if (auth.authenticate) {
-    return <Redirect to={`/`} />;
+    return <Redirect to={`/customer/dashboard`} />;
   }
 
   return (
@@ -69,16 +69,34 @@ const Signin = (props) => {
                 <p>Give your credential below</p>
               </div>
 
-              <form>
+              <form onSubmit={userLogin}>
                 <div className="login_email">
-                  <input type="email" name="name" placeholder="email" />
+                  <input
+                    type="email"
+                    name="name"
+                    placeholder="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
                 <div className="login_email">
-                  <input type="text" name="password" placeholder="Password" />
+                  <input
+                    type="password"
+                    name="password"
+                    value={password}
+                    placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </div>
                 <div className="login_but">
-                  <input type="submit" value="login" />
+                  <input type="submit" value="Login" />
                 </div>
+                <Link
+                  style={{ color: "white", marginLeft: "50px" }}
+                  to="/customer/resetPassword"
+                >
+                  Reset Passoword
+                </Link>
               </form>
             </div>
           </div>

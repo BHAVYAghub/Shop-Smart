@@ -72,7 +72,7 @@ const Signup = (props) => {
         <div className="signup_extra">
           <div className="signup_login">
             <h3>
-              <a href="/login" style={{ color: "white" }}>
+              <a href="/customer/signin" style={{ color: "white" }}>
                 Login
               </a>
             </h3>
@@ -88,17 +88,35 @@ const Signup = (props) => {
             </div>
 
             <div className="signup_part1-form">
-              <form>
+              <form onSubmit={userSignup}>
                 <div className="signup_username">
-                  <h3>Username</h3>
+                  <h3>First Name</h3>
                 </div>
                 <div className="signup_ex">
                   <input
                     type="text"
-                    name="username"
+                    name="First Name"
                     className="signup_name-form"
-                    placeholder="Enter your Username"
+                    placeholder="Enter your Fisrt Name"
+                    onChange={(e) => setFirstName(e.target.value)}
+                    value={firstName}
                     id="fname"
+                    required
+                  />{" "}
+                  <p id="message1"></p>
+                </div>
+                <div className="signup_username">
+                  <h3>Last Name</h3>
+                </div>
+                <div className="signup_ex">
+                  <input
+                    type="text"
+                    name="Last Name"
+                    className="signup_name-form"
+                    placeholder="Enter your Last Name"
+                    id="fname"
+                    onChange={(e) => setLastName(e.target.value)}
+                    value={lastName}
                     required
                   />{" "}
                   <p id="message1"></p>
@@ -111,6 +129,8 @@ const Signup = (props) => {
                   className="signup_email-form"
                   name="email"
                   placeholder="Enter your Email id"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
                   required
                 />
 
@@ -122,6 +142,8 @@ const Signup = (props) => {
                   className="signup_pass-form"
                   name="password"
                   placeholder="Enter your Passoword"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
                   required
                 />
 

@@ -79,3 +79,16 @@
     }
   }
 }
+
+.menu_item_button {
+  margin: 15px;
+  font-weight: bolder;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 1.15em;
+  text-decoration: none;
+  &:hover {
+    color: rgb(50, 219, 198);
+    cursor: pointer;
+  }
+}

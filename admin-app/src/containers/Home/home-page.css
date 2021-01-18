@@ -109,6 +109,20 @@
   cursor: pointer;
 }
 
+.menu_item_button {
+  margin: 15px;
+  font-weight: bolder;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 1.15em;
+  text-decoration: none;
+}
+
+.menu_item_button:hover {
+  color: #32dbc6;
+  cursor: pointer;
+}
+
 .section3 {
   background-image: url("../../assets/img/back_prom.jpg");
   background-size: contain;

@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { isUserLoggedIn, getInitialData, getAllCategory } from "./actions";
 import Products from "./containers/Products";
 import Orders from "./containers/Orders";
+import Dashboard from "./containers/Customer/Dashboard/index";
 import Category from "./containers/Category";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/signup" component={Signup} />
         <Route path="/customer/signup" component={CustomerSignup} />
         <Route path="/customer/signin" component={customerLogin} />
+        <PrivateRoute path="/customer/dashboard" component={Dashboard} />
         <PrivateRoute path="/customer/profile" component={Profile} />
 
         <PrivateRoute path="/category" component={Category} />

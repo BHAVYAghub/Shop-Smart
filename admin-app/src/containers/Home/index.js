@@ -1,4 +1,6 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { customerSignout, signout } from "../../actions";
 import { Col, Container, Jumbotron, Row } from "react-bootstrap";
 import Layout from "../../components/Layout";
 import Logo from "../../assets/img/logo.svg";
@@ -13,6 +15,17 @@ import "./home-page.css";
  **/
 
 const Home = (props) => {
+  const auth = useSelector((state) => state.auth);
+  const customerAuth = useSelector((state) => state.customerLogin);
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    if (auth.authenticate) {
+      dispatch(signout());
+    } else {
+      dispatch(customerSignout());
+    }
+  };
   return (
     <React.Fragment>
       <div className="section1">
@@ -52,9 +65,29 @@ const Home = (props) => {
               <h2>WEB AR</h2>
             </div>
             <div className="menu-items">
-              <a href="/customer/signin">Login</a>
-              <a href="/customer/signup">Signup</a>
-              <a href="#">Admin</a>
+              {auth.authenticate || customerAuth.authenticate ? (
+                <a href="/customer/profile">Profile</a>
+              ) : (
+                <a href="/customer/signin">Login</a>
+              )}
+              {auth.authenticate || customerAuth.authenticate ? (
+                <button
+                  onClick={logout}
+                  className="menu_item_button"
+                  style={{
+                    background: "none",
+                    outline: "none",
+                    border: "none",
+                  }}
+                >
+                  Signout
+                </button>
+              ) : (
+                <a href="/customer/signup">Signup</a>
+              )}
+              {auth.authenticate || customerAuth.authenticate ? null : (
+                <a href="/signin">Admin</a>
+              )}
               <a href="#down1">Reviews</a>
             </div>
           </div>

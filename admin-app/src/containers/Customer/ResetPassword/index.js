@@ -26,6 +26,7 @@ const ResetPassword = (props) => {
       return;
     }
     const user = {
+      email,
       password,
     };
     dispatch(customerReset(user));
@@ -44,10 +45,10 @@ const ResetPassword = (props) => {
           <Col md={{ span: 6, offset: 3 }}>
             <Form onSubmit={resetPassword}>
               <Input
-                label="email"
+                label="Email"
                 placeholder="Email"
                 value={email}
-                type="password"
+                type="text"
                 onChange={(e) => setEmail(e.target.value)}
               />
               <Input
