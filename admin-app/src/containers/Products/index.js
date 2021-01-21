@@ -63,53 +63,106 @@ const Products = (props) => {
     setProductPictures([...productPictures, e.target.files[0]]);
   };
 
+
   const renderProducts = () => {
+
     return (
-      <Table style={{ fontSize: 12 }} responsive="sm">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Description</th>
-            <th>Product Pictures</th>
-            <th>Category</th>
-            {/* <th>Actions</th> */}
-          </tr>
-        </thead>
-        <tbody>
-          {product.products.length > 0
-            ? product.products.map((product) => (
-                <tr key={product._id}>
-                  <td>2</td>
-                  <td>{product.name}</td>
-                  <td>{product.price}</td>
-                  <td>{product.quantity}</td>
-                  <td>{product.description}</td>
-                  <td>Product Picture</td>
-                  <td>{product.category.name}</td>
-                  {/* <td>
-                    <button onClick={() => showProductDetailsModal(product)}>
-                      info
-                    </button>
-                    <button
-                      onClick={() => {
-                        const payload = {
-                          productId: product._id,
-                        };
-                        dispatch(deleteProductById(payload));
-                      }}
-                    >
-                      del
-                    </button>
-                  </td> */}
-                </tr>
-              ))
-            : null}
-        </tbody>
-      </Table>
-    );
+      <Layout>
+        {
+         // Object.keys(product.productsByPrice).map((key, index) => {
+           // return (
+              <div className="card">
+                <div className="cardHeader">
+                  <div>Samsung mobile </div>
+                  <button>View All</button>
+                </div>
+                <div>
+                  {
+                    //product.productsByPrice[key].map(product =>
+                    product.products.length > 0
+                      ? product.products.map((product) => (
+                      <div className="productContainer">
+                        <div className="productImgContainer">
+                          <img src="" alt=""></img>
+                        </div>
+                        <div className="productInfo">
+                          <div style={{ margin: '5px 0' }}>{product.name}</div>
+                          <div>
+                            <span>
+                              4.3
+                  </span>
+                            <span>3353</span>
+                          </div>
+                          <div className="productPrice">{product.price}
+
+                </div>
+                <div className="productDesciption">{product.description}
+
+                </div>
+                        </div>
+
+                      </div> ))
+             : null
+             }
+                  
+
+
+                </div>
+              </div>
+
+          //  );
+         // })
+        }
+
+      </Layout>
+    )
+
+    // return (
+    //   <Table style={{ fontSize: 12 }} responsive="sm">
+    //     <thead>
+    //       <tr>
+    //         <th>#</th>
+    //         <th>Name</th>
+    //         <th>Price</th>
+    //         <th>Quantity</th>
+    //         <th>Description</th>
+    //         <th>Product Pictures</th>
+    //         <th>Category</th>
+    //         {/* <th>Actions</th> */}
+    //       </tr>
+    //     </thead>
+    //     <tbody>
+    //       {product.products.length > 0
+    //         ? product.products.map((product) => (
+    //             <tr key={product._id}>
+    //               <td>2</td>
+    //               <td>{product.name}</td>
+    //               <td>{product.price}</td>
+    //               <td>{product.quantity}</td>
+    //               <td>{product.description}</td>
+    //               <td>Product Picture</td>
+    //               <td>{product.category.name}</td>
+    //               {/* <td>
+    //                 <button onClick={() => showProductDetailsModal(product)}>
+    //                   info
+    //                 </button>
+    //                 <button
+    //                   onClick={() => {
+    //                     const payload = {
+    //                       productId: product._id,
+    //                     };
+    //                     dispatch(deleteProductById(payload));
+    //                   }}
+    //                 >
+    //                   del
+    //                 </button>
+    //               </td> */}
+    //             </tr>
+    //           ))
+    //         : null}
+    //     </tbody>
+    //   </Table>
+    // );
   };
 
   return (
@@ -171,8 +224,8 @@ const Products = (props) => {
         </select>
         {productPictures.length > 0
           ? productPictures.map((pic, index) => (
-              <div key={index}>{pic.name}</div>
-            ))
+            <div key={index}>{pic.name}</div>
+          ))
           : null}
         <input
           type="file"
