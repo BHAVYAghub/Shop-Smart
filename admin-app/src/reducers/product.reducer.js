@@ -2,6 +2,13 @@ import { productConstants } from "../actions/constants";
 
 const initialState = {
   products: [],
+  productsByPrice:{
+    under5k:[],
+    under10k:[],
+    under15k:[],
+    under20k:[],
+    under30k:[]
+  }
 };
 
 export default (state = initialState, action) => {
