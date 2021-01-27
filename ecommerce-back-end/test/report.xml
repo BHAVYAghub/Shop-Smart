@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.1540" tests="8" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-01-27T18:01:59" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="USER TESTING" timestamp="2021-01-27T18:01:59" tests="8" file="G:\Shop-Smart\ecommerce-back-end\test\test.js" time="1.1540" failures="0">
+    <testcase name="USER TESTING should return string " time="0.0290" classname="should return string ">
+    </testcase>
+    <testcase name="USER TESTING should say incomplete detail while creating data" time="0.0320" classname="should say incomplete detail while creating data">
+    </testcase>
+    <testcase name="USER TESTING should create a test user" time="0.7960" classname="should create a test user">
+    </testcase>
+    <testcase name="USER TESTING should say user already registered" time="0.0350" classname="should say user already registered">
+    </testcase>
+    <testcase name="USER TESTING should respond with token for user login" time="0.1110" classname="should respond with token for user login">
+    </testcase>
+    <testcase name="USER TESTING should fetch user" time="0.0390" classname="should fetch user">
+    </testcase>
+    <testcase name="USER TESTING should delete a the test user" time="0.0760" classname="should delete a the test user">
+    </testcase>
+    <testcase name="USER TESTING should say user not found" time="0.0360" classname="should say user not found">
+    </testcase>
+  </testsuite>
+</testsuites>
