@@ -2,6 +2,8 @@ FROM node:15.2.0-alpine AS builder
 WORKDIR /app
 COPY . .
 RUN npm install
+RUN npm --depth 9999 update
+RUN npm rebuild node-sass
 RUN react-scripts build
 
 FROM nginx:1.17.1-alpine AS prod-stage
